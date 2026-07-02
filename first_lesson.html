@@ -34,6 +34,10 @@
         </div>
     </div>
 
+    <h3 id="man"> </h3>
+    <h4 id="sample"> </h4>
+    <h4 id="check"></h4>
+
     <script> 
         var  name = 1;
 
@@ -46,15 +50,51 @@
         
         console.log(yz);
 
+        var e = 10;
+        e *= 5;
+        console.log(e);
+        document.getElementById("man").innerHTML = e;
+
+         var x = 20;
+        x -= 5;
+        console.log(x);
+        document.getElementById("sample").innerHTML ="The answer is " + x; 
+
+
         var firstName = "John"
         var lastName = "chi";
         var fullName = lastName + " " + firstName;
         document.write(fullName);
+        var statement = " \"He said, \"I am here\""
         {
             let a = 6;
         }
-               
         
+               
+        var small = 10;
+        var big = 100; 
+        var check = small >= big; 
+       document.getElementById('check').innerHTML=check;
+    </script>
+
+    <br> <br> 
+    <script> 
+          if (small > big) 
+            {
+                document.write("Small is greater");    
+            }
+        else if (big > small) 
+            {
+                document.write("Big is greater")
+            }
+        //tenary
+        var time = 12;
+        var greeting;
+        var result = time > 20 ? "Good Afternoon" : "Good Morning";
+        window.alert(result);
+        //document.write(result);
+
+        var age =  document.getElementById('check').value();
     </script>
 </body>
 </html>

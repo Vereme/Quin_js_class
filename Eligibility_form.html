@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<!-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> -->
+<script src="
+https://cdn.jsdelivr.net/npm/sweetalert2@11.26.25/dist/sweetalert2.all.min.js
+"></script>
+<link href="
+https://cdn.jsdelivr.net/npm/sweetalert2@11.26.25/dist/sweetalert2.min.css
+" rel="stylesheet">
+<title>Eligibility Form</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: #f4f1ea;
+    display: flex;
+    justify-content: center;
+    padding-top: 60px;
+  }
+
+  .card {
+    background: #ffffff;
+    border: 2px solid #2b2d6b;
+    border-radius: 10px;
+    padding: 30px 35px;
+    width: 350px;
+    box-shadow: 4px 4px 0px #2b2d6b;
+  }
+
+  h2 {
+    margin: 0 0 5px 0;
+    color: #2b2d6b;
+  }
+
+  hr {
+    border: none;
+    border-top: 2px dashed #2b2d6b;
+    margin-bottom: 20px;
+  }
+
+  label {
+    font-weight: bold;
+    color: #2b2d6b;
+  }
+
+  input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 8px;
+    margin-bottom: 18px;
+    border: 2px solid #2b2d6b;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 16px;
+  }
+
+  button {
+    display: block;
+    margin: 0 auto 20px auto;
+    padding: 10px 25px;
+    background: #2b2d6b;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background: #1c1e4a;
+  }
+
+  #result {
+    min-height: 24px;
+    padding: 10px;
+    border-radius: 6px;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .eligible {
+    background: #e0f5e0;
+    color: #1f7a1f;
+    border: 1px solid #1f7a1f;
+  }
+
+  .not-eligible {
+    background: #fde0e0;
+    color: #a31515;
+    border: 1px solid #a31515;
+  }
+</style>
+</head>
+<body>
+
+  <div class="card">
+    <h2>Eligibility Form</h2>
+    <hr>
+
+    <label for="age">Age</label>
+    <input type="number" id="age" placeholder="Enter your age">
+
+    <button onclick="checkEligibility()">Check Eligibility</button>
+
+    <div id="result"></div>
+  </div>
+
+  <button onclick="addition('I love learning', ' Javascript')">Add together </button>
+
+  <button onclick="equality_check()">Equality Check</button>
+
+  <script>
+    function checkEligibility() {
+      debugger;
+      const ageInput = document.getElementById("age");
+      const result = document.getElementById("result");
+      const age = parseInt(ageInput.value);
+
+      result.classList.remove("eligible", "not-eligible");
+
+      if (isNaN(age) || ageInput.value.trim() === "") {
+        result.textContent = "Please enter a valid age.";
+        result.classList.add("not-eligible");
+        return;
+      }
+
+      if (age < 0 || age > 120) {
+        result.textContent = "Please enter a realistic age.";
+        result.classList.add("not-eligible");
+        return;
+      }
+
+      if (age >= 18) {
+        result.textContent = "You are eligible to vote!";
+        result.classList.add("eligible");
+      } else {
+        result.textContent = "Sorry, you are underage and not eligible to vote.";
+        result.classList.add("not-eligible");
+      }
+    }
+  
+      function addition(firstText,secondText) {
+        debugger;
+        // var sum = a + b;
+        // window.alert(sum);
+
+      let result = firstText + secondText;
+      document.write(result);
+        
+      }
+
+      var e = 10;
+      var d = "10";
+      var result = e == d;
+      console.log(result);
+
+      function equality_check(){
+        debugger
+      var e = 10;
+      var d = 10;
+      // var result = e == d;
+        var response = "";
+      if (e === d ){
+
+          // document.write("correct!");
+      Swal.fire({
+      title: "Correct!",
+      text: "It is equal !",
+      icon: "success"
+});
+      }
+
+      else{
+
+        Swal.fire({
+        title: "Incorrect!",
+        text: "It is not equal!",
+        icon: "error"
+      });
+
+      }
+
+
+
+
+      }
+
+
+  
+  </script>
+
+</body>
+</html>
